@@ -1,0 +1,134 @@
+.product__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product__sort {
+    align-self: flex-end;
+    padding: 1rem 0.6rem;
+}
+
+.product__sort select {
+    padding: .4rem;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-3);
+}
+
+.product__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .2rem;
+    margin-bottom: 3rem;
+}
+
+.product__item {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+    padding: .8rem;
+    border-radius: var(--border-radius-3);
+    border: 1px solid var(--color-blue);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product__item-image {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.product__item h4 {
+    padding-bottom: .1rem;
+}
+
+.product__item h5 {
+    padding-bottom: .6rem;
+}
+
+.product__item div{
+    display: flex;
+}
+
+.product__buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__buy__alert {
+    position: absolute;
+    left: 98%;
+    margin: auto;
+    width: 60%;
+    max-width: 300px;
+    z-index: var(--z-fixed);
+}
+
+.add__icon {
+    background: none;
+}
+
+.add__icon:hover {
+    color: var(--color-green);
+    transition: var(--transition);
+}
+
+.product__item .btn{
+    padding: 0.6rem .6rem;
+    border-color: var(--color-blue);
+}
+
+.product__item .btn:hover{
+    border-color: var(--color-green);
+}
+
+.product__rating {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+}
+
+.original-price {
+    margin-right: .6rem;
+    color: var(--color-red);
+    text-decoration: line-through;
+}
+
+.product__item:hover {
+    background-color: transparent;
+    color: var(--color-black);
+    border: 1px solid var(--color-yellow);
+}
+
+.product__item-image {
+    border-radius: var(--border-radius-2);
+    overflow: hidden;
+}
+
+.loadmore__btn {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+}
+
+
+
+/*=============== MEDIA QUERY ===============*/
+
+@media screen and (max-width: 1024px) {
+    .product__items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+  }
+  @media screen and  (max-width: 768px) { 
+
+  }
+    
+  @media screen and  (max-width: 600px) { 
+    .product__items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }

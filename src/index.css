@@ -1,0 +1,233 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3rem;
+  
+    /*========== Colors ==========*/
+    --color-red: #db3021;
+    --color-yellow:#FFE26D;
+    --color-white: #ffffff;
+    --color-black: #353535;
+    --color-blue: #00a0d2;
+    --color-gray: #f4f4f4;
+    --color-green: #81C784;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --h-font: 'M PLUS Rounded 1c', sans-serif;
+  
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --big-font-size: 3.5rem;
+    --h1-font-size: 3.0rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+  
+    /*========== Font weight ==========*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 700;
+  
+    /*========== Margenes Bottom ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+
+    /*========== Container ==========*/
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+    --container-width-sm-d: 92%;
+
+    /*========== border radius ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --border-radius-1: 1.2rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 0.5rem;
+
+    /*========== transition ==========*/
+    --transition: all 0.5s ease-in-out;
+    --transition-slow: all 1.5s ease-in-out;
+
+    /*========== transform ==========*/
+    --transform: translate(-0.3rem, -0.3rem);
+  }
+
+
+
+/*=============== BASE ===============*/
+* {
+    outline: 0;
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--color-gray);
+  color: var(--color-black);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--h-font);
+  line-height: 1.1;
+  font-weight: var(--font-semi-bold);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  padding-bottom: 5rem;
+  text-shadow: 5px 9px 0px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+  
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: var(--transition);
+}
+  
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+  
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+  /*=============== GENERAL CONTAINER CLASS ===============*/
+
+.container {
+  width: var(--container-width-lg);
+  margin-inline: auto;
+  max-width: 1920px;
+}
+
+  /*=============== GENERAL SECTION STYLES ===============*/
+
+section {
+  padding: 10rem 0;
+  transition: var(--transition);
+  z-index: var(--z-tooltip);
+  overflow-x: hidden;
+}
+
+  /*=============== GENERAL BUTTON STYLES ===============*/
+
+  .btn {
+    width: fit-content;
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 2.5rem;
+    border: 1px solid var(--color-yellow);
+    border-radius: var(--border-radius-3);
+    cursor: pointer;
+    color: var(--color-black);
+    background-color: var(--color-text);
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .btn > span {
+    position: relative;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-3);
+    font-weight: var(--font-semi-bold);
+    z-index: var(--z-tooltip);
+  }
+  
+  .btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-3);
+    top: 0.6rem;
+    left: 0.6rem;
+    pointer-events: none;
+    transition: var(--transition);
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn:hover.btn::before {
+    top: 0;
+    left: 0;
+  }
+
+/*=============== MEDIA QUERY ===============*/
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+  
+}
+@media screen and  (max-width: 768px) { 
+  .container {
+    width: var(--container-width-sm);
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and  (max-width: 600px) { 
+  .container {
+    width: var(--container-width-sm-d);
+  }
+  section {
+    margin-top: 2rem;
+  }
+}

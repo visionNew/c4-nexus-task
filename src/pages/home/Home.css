@@ -1,0 +1,20 @@
+.container__content {
+    display: grid;
+    grid-template-columns: 20% 78%;
+    gap: 2rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+    
+    
+  }
+  @media screen and  (max-width: 768px) { 
+    .container__content {
+        grid-template-columns: 100%;
+    }
+  }
+    
+  @media screen and  (max-width: 600px) { 
+    
+  }
