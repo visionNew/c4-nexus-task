@@ -16,12 +16,13 @@ const MenuProps = {
 };
 
 export default function Filter() {
-  const [dataMap, setDataMap] = useState({});
-  const [selectedBrands, setSelectedBrands] = useState([]);
-  const [selectedRatings, setSelectedRatings] = useState([]);
-  const [selectedPrices, setSelectedPrices] = useState([]);
-  const [currentProductsCount, setCurrentProductsCount] = useState(0);
+  const [dataMap, setDataMap] = useState({}); //Function for Data Map
+  const [selectedBrands, setSelectedBrands] = useState([]); //Function for Selected of Brands
+  const [selectedRatings, setSelectedRatings] = useState([]); //Function for Selected of Rating
+  const [selectedPrices, setSelectedPrices] = useState([]); //Function for Selected of Price
+  const [currentProductsCount, setCurrentProductsCount] = useState(0); //Function for Number of Items
 
+  // Data.Map Hook
   useEffect(() => {
     setDataMap({
       bags: bagsData,
@@ -30,7 +31,7 @@ export default function Filter() {
       jewellery: jewelleryData,
     });
   }, []);
-
+  // Hook for Filter Items 
   useEffect(() => {
     const filterProducts = () => {
       const slicedData = [];
@@ -44,12 +45,13 @@ export default function Filter() {
           selectedRatings.includes(product.rating) &&
           selectedPrices.includes(product.price)
       );
-      setCurrentProductsCount(filtered.length);
+      setCurrentProductsCount(filtered.length); //Rendering on Number of Items
     };
 
     filterProducts();
   }, [selectedBrands, selectedRatings, selectedPrices, dataMap]);
 
+  // Functions for Selected Events
   const handleBrandChange = (event) => {
     setSelectedBrands(event.target.value);
   };
@@ -71,6 +73,7 @@ export default function Filter() {
     return Array.from(brands);
   };
 
+  // Function to Display Selection Options
   const getUniqueRatings = () => {
     const ratings = new Set();
     Object.keys(dataMap).forEach((category) => {

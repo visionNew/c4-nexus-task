@@ -4,7 +4,7 @@ import Rating from '@mui/material/Rating';
 import { bagsData, shoesData, watchesData, jewelleryData } from "../../utils/db.json";
 
 const BasicRating = ({ productId, category }) => {
-  const [ratings, setRatings] = useState(0);
+  const [ratings, setRatings] = useState(0); //Function for rendering Rating
 
   useEffect(() => {
     const fetchRating = () => {

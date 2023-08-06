@@ -5,8 +5,8 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import DropdownCategory from './DropdownCategory';
 
 function Dropdown () {
-    const [isActive, setIsActive] = useState(false);
-    const [selected, setSelected] = useState("");
+    const [isActive, setIsActive] = useState(false); //Function for Open Dropdown
+    const [selected, setSelected] = useState(""); //Function for Nav select
 
     
     return (

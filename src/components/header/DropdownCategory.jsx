@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 
 const DropdownCategory = () => {
-    const [isActive, setIsActive] = useState(false);
-    const [selected, setSelected] = useState("");
+    const [isActive, setIsActive] = useState(false); //Function for Open Dropdown
+    const [selected, setSelected] = useState(""); //Function for Nav select
   return (
     <div className="dropdown__category">
                   <button className="dropdown__category__btn" onClick={() => {setIsActive(!isActive)}} >Category</button>

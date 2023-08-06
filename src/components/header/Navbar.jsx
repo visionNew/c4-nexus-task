@@ -8,7 +8,7 @@ import DropdownCategory from './DropdownCategory';
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState(""); //Function for Nav select
 
   return (
     <section className="section__header">
