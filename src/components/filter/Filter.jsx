@@ -1,19 +1,6 @@
 import { useState, useEffect } from "react";
-import {
-  MenuItem,
-  Checkbox,
-  ListItemText,
-  Select,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-} from "@mui/material";
-import {
-  bagsData,
-  shoesData,
-  watchesData,
-  jewelleryData,
-} from "../../utils/db.json";
+import { MenuItem, Checkbox,  ListItemText,  Select,  FormControl,  InputLabel,  OutlinedInput } from "@mui/material";
+import { bagsData,  shoesData,  watchesData,  jewelleryData } from "../../utils/db.json";
 import "./Filter.css";
 import FilterDropdown from "./FilterDropdown";
 

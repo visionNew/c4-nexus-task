@@ -27,12 +27,10 @@ const BasicRating = ({ productId, category }) => {
       }
 
       if (data && data.rating) {
-        console.log("Rating data:", data); // Debugging: Log the data retrieved
         setRatings(data.rating);
       }
     };
 
-    console.log("Fetching rating for:", category, productId); // Debugging: Log category and productId
     fetchRating();
   }, [category, productId]);
 
